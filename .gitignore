@@ -1,0 +1,15 @@
+# Project files
+*.iml
+.gradle
+/local.properties
+/.idea
+
+# Build
+/build
+shared/build
+androidApp/build
+
+# Mac
+.DS_Store
+/captures
+.externalNativeBuild
