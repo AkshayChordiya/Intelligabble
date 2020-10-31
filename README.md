@@ -3,7 +3,7 @@
 Intelligabble is a Kotlin Multiplatform App which explains tech related terms like Git, VCS, branch, API, executable file, etc in 
 an easy and user-friendly format to non-tech people like designers, product owners in an agile team. 
 
-<img alt="Intelligabble App Screenshot" height="450px" src="https://raw.githubusercontent.com/AkshayChordiya/Intelligabble/master/art/Intelligabble_v1.png" />
+<img alt="Intelligabble App Screenshot" height="450px" src="https://user-images.githubusercontent.com/20217203/97656570-fe264d80-1a24-11eb-9ed9-fe751c248b8a.png" />
 
 ## Contributing
 
