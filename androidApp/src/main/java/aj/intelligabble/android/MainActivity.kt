@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                     leadingIcon = { Icon(Icons.Filled.Search) },
                     textStyle = TextStyle(fontSize = 16.sp)
             )
-            LazyColumnFor(data.filterKeys { it.contains(textState.value.text) }.entries.toList()) { (term, description) ->
+            LazyColumnFor(data.filterKeys { it.contains(textState.value.text, ignoreCase = true) }.entries.toList()) { (term, description) ->
                 ListItem(
                         text = {
                             Text(term)
