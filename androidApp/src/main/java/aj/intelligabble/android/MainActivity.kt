@@ -19,8 +19,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,16 +37,17 @@ class MainActivity : AppCompatActivity() {
 
     @Composable
     fun geekTermsList(data: Map<String, String>) {
+        val textState = remember { mutableStateOf(TextFieldValue()) }
         Column(Modifier.padding(16.dp)) {
-            val textState = remember { mutableStateOf(TextFieldValue()) }
             TextField(
                     modifier = Modifier.fillMaxWidth(),
                     value = textState.value,
                     onValueChange = { textState.value = it },
                     label = { Text("Search") },
                     leadingIcon = { Icon(Icons.Filled.Search) },
+                    textStyle = TextStyle(fontSize = 16.sp)
             )
-            LazyColumnFor(data.entries.toList()) { (term, description) ->
+            LazyColumnFor(data.filterKeys { it.contains(textState.value.text) }.entries.toList()) { (term, description) ->
                 ListItem(
                         text = {
                             Text(term)
